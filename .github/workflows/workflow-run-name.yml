@@ -7,4 +7,4 @@ jobs:
     steps:
       - name: Print Run Name
         run: |
-        echo "The run name is: ${{ github.run_name }}"
+          echo "The run name is: ${{ github.run_name }}"
