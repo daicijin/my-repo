@@ -1,0 +1,10 @@
+name: Run name
+run-name: Run By ${{ github.actor }}
+on: push
+jobs:
+  print-run-name:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Run Name
+        run: |
+        echo "The run name is: ${{ github.run_name }}"
