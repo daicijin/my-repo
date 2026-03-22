@@ -13,6 +13,6 @@ jobs:
             test-${{ runner.os }}-
       - run: |
           if [[ -f "${{ github.workspace }}/cache" ]]; then exit 0; fi
-          dd if=/dev/urandom of=${{ github.workspace }}/cache/test.txt bs=1M count=10
+          dd if=/dev/urandom of=${{ github.workspace }}/cache bs=1M count=10
       - run: |
           ls -l ${{ github.workspace }}/cache
