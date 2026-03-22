@@ -1,0 +1,22 @@
+name: Environments
+on:
+  workflow_dispatch:
+    inputs:
+      environment-name:
+        type: environment
+        default: test
+        required: false
+        description: "Select an environment"
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    environment: ${{ github.event.inputs.environment-name }}
+    env:
+      USERNAME: ${{ vars.USERNAME }}
+      PASSWORD: ${{ secrets.PASSWORD }}
+    steps:
+      - run: echo "This is running in the ${{ github.event.inputs.environment-name }} environment"
+      - run: |
+          echo "Username: $USERNAME"
+      - run: |
+          echo "Password: $PASSWORD"
