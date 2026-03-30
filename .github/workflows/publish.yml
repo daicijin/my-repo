@@ -32,7 +32,7 @@ jobs:
             type=semver,pattern={{version}},value=${{ github.event.inputs.version }}
             type=raw,value=latest
       - name: Build and push Docker image
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v7
         with:
           push: true
           context: docker/example
